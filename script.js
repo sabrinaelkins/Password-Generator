@@ -15,6 +15,25 @@ function generatePassword() {
   if (!passwordLowercase && !passwordUppercase && !passwordNumber && !passwordSpecialcharacter) {
     return "choose atleast one option"
   }
+  var validCharacters = ""
+  if (passwordLowercase) {
+    validCharacters += passwordLowercase
+  }
+  if (passwordUppercase) {
+    validCharacters += passwordUppercase
+  }
+  if (passwordSpecialcharacter) {
+    validCharacters += passwordSpecialcharacter
+  }
+  if (passwordNumber) {
+    validCharacters += passwordNumber
+  }
+  var newPassword = ""
+  for(let i=1;i<=passwordLength; i++){
+    var y = Math.floor(Math.random() * validCharacters.length)
+   newPassword += validCharacters[y] 
+  }
+  console.log(newPassword)
 }
 
 // Get references to the #generate element

@@ -8,6 +8,13 @@ function generatePassword() {
   if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
     return "invalid password length please try again"
   }
+  var passwordUppercase = confirm("add uppercase letter")
+  var passwordLowercase = confirm("add lowercase letter")
+  var passwordNumber = confirm("add number")
+  var passwordSpecialcharacter = confirm("add special character")
+  if (!passwordLowercase && !passwordUppercase && !passwordNumber && !passwordSpecialcharacter) {
+    return "choose atleast one option"
+  }
 }
 
 // Get references to the #generate element

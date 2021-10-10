@@ -4,6 +4,10 @@ function generatePassword() {
   var lowerCaseLetters ="abcdefhijklmnopqrstuvwxyz";
   var numbers = "1234567890";
   var specialCharacters = "!@#$%^&*()";
+  var passwordLength = parseInt(prompt("Enter Password Length (8-128)?"))
+  if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
+    return "invalid password length please try again"
+  }
 }
 
 // Get references to the #generate element
